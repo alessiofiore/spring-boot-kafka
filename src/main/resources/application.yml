@@ -1,0 +1,17 @@
+spring:
+  kafka:
+    server: localhost:9092
+    consumer.groupId: group1
+    listener.concurrency: 1
+    #topicOut: error.dev-edm-engine.engine
+    topicOut: dev-edm-engine
+    topicIn: testInTopic
+
+# logging
+logging:
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %msg%n'
+  level:
+    com.example: debug
+    org.apache.kafka: warn
+    ROOT: warn
