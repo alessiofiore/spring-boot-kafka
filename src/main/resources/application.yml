@@ -3,9 +3,7 @@ spring:
     server: localhost:9092
     consumer.groupId: group1
     listener.concurrency: 1
-    #topicOut: error.dev-edm-engine.engine
-    topicOut: dev-edm-engine
-    topicIn: testInTopic
+    topic: myMessageTopic
 
 # logging
 logging:

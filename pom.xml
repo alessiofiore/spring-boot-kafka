@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.4.RELEASE</version>
+        <version>2.3.3.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
@@ -16,9 +16,6 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <octo.repository.url>http://itt-deployer:8081/artifactory/octo/</octo.repository.url>
-        <octo-datamodel.version>1.0.0-SNAPSHOT</octo-datamodel.version>
-        <octo-serialization.version>3.0.0.0-SNAPSHOT</octo-serialization.version>
     </properties>
 
     <dependencies>
@@ -50,65 +47,6 @@
             <artifactId>spring-kafka-test</artifactId>
             <scope>test</scope>
         </dependency>
-
-        <dependency>
-            <groupId>com.octotelematics.otp.dm</groupId>
-            <artifactId>octo-protocol</artifactId>
-            <version>${octo-datamodel.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-simple</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>com.octotelematics.otp.dm</groupId>
-            <artifactId>motor-protocol</artifactId>
-            <version>${octo-datamodel.version}</version>
-        </dependency>
-        <!--<dependency>
-            <groupId>com.octotelematics.otp.dm</groupId>
-            <artifactId>telematics-protocol</artifactId>
-            <version>${octo-datamodel.version}</version>
-        </dependency>-->
-        <dependency>
-            <groupId>com.octotelematics.otp.serialization</groupId>
-            <artifactId>transport-serialization</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.octotelematics.otp.serialization</groupId>
-            <artifactId>object-serialization-core</artifactId>
-            <version>${octo-serialization.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-simple</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>com.octotelematics.otp.serialization</groupId>
-            <artifactId>object-serialization-avro</artifactId>
-            <version>${octo-serialization.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.octotelematics.otp.serialization</groupId>
-            <artifactId>object-serialization-json</artifactId>
-            <version>${octo-serialization.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.octotelematics.otp.serialization</groupId>
-            <artifactId>object-serialization-gzip</artifactId>
-            <version>${octo-serialization.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-simple</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
     </dependencies>
 
     <build>
@@ -119,16 +57,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <repositories>
-        <repository>
-            <id>da_repository</id>
-            <name>Da Repository</name>
-            <url>${octo.repository.url}</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
 </project>

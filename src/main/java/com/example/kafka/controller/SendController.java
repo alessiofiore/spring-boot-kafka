@@ -1,15 +1,12 @@
-package com.example.kafka;
+package com.example.kafka.controller;
 
-import com.octotelematics.otp.serialization.SerializationException;
+import com.example.kafka.service.SendService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * @author AFIORE
- * Created on 05/06/2019
- */
 @RestController
 @RequestMapping("/send")
 public class SendController {
@@ -18,8 +15,8 @@ public class SendController {
     private SendService sendService;
 
     @GetMapping
-    public String send() {
-        sendService.send();
+    public String send(@RequestParam("msg") String message) {
+        sendService.send(message);
         return "Messange sent";
     }
 
